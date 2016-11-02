@@ -63,8 +63,8 @@ bool
 OMR::Monitor::init(char *name)
    {
    _name = name;
-   MUTEX_INIT(_monitor);
-   bool rc = MUTEX_INIT(_monitor);
+   J9OSMUTEX_INIT(_monitor);
+   bool rc = J9OSMUTEX_INIT(_monitor);
    TR_ASSERT(rc == true, "error initializing monitor\n");
    return true;
    }
@@ -79,9 +79,9 @@ void
 OMR::Monitor::destroy()
    {
 #ifdef WIN32
-   MUTEX_DESTROY(_monitor);
+   J9OSMUTEX_DESTROY(_monitor);
 #else
-   int32_t rc = MUTEX_DESTROY(_monitor);
+   int32_t rc = J9OSMUTEX_DESTROY(_monitor);
    TR_ASSERT(rc == 0, "error destroying monitor\n");
 #endif
    }
@@ -90,9 +90,9 @@ void
 OMR::Monitor::enter()
    {
 #ifdef WIN32
-   MUTEX_ENTER(_monitor);
+   J9OSMUTEX_ENTER(_monitor);
 #else
-   int32_t rc = MUTEX_ENTER(_monitor);
+   int32_t rc = J9OSMUTEX_ENTER(_monitor);
    TR_ASSERT(rc == 0, "error locking monitor\n");
 #endif
    }
@@ -101,10 +101,10 @@ int32_t
 OMR::Monitor::exit()
    {
 #ifdef WIN32
-   MUTEX_EXIT(_monitor);
+   J9OSMUTEX_EXIT(_monitor);
    return 0;
 #else
-   int32_t rc = MUTEX_EXIT(_monitor);
+   int32_t rc = J9OSMUTEX_EXIT(_monitor);
    TR_ASSERT(rc == 0, "error unlocking monitor\n");
    return rc;
 #endif

@@ -27,7 +27,7 @@ namespace OMR { typedef OMR::Monitor MonitorConnector; }
 
 #include <stdint.h>          // for int32_t, int64_t
 #include "infra/Assert.hpp"  // for TR_ASSERT
-#include "omrmutex.h"        // for MUTEX
+#include "thrdsup.h"         // for J9OSMutex
 
 namespace TR { class Monitor; }
 
@@ -64,7 +64,7 @@ class Monitor
    void operator delete(void *p);
 
    char const *_name;
-   MUTEX _monitor;
+   J9OSMutex _monitor;
    };
 
 }
