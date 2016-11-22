@@ -19,15 +19,6 @@
 #ifndef OMR_CODEGENERATOR_INCL
 #define OMR_CODEGENERATOR_INCL
 
-/*
- * The following #define and typedef must appear before any #includes in this file
- */
-#ifndef OMR_CODEGENERATOR_CONNECTOR
-#define OMR_CODEGENERATOR_CONNECTOR
-namespace OMR { class CodeGenerator; }
-namespace OMR { typedef OMR::CodeGenerator CodeGeneratorConnector; }
-#endif
-
 #include <limits.h>                             // for INT_MAX, etc
 #include <stddef.h>                             // for NULL, size_t
 #include <stdint.h>                             // for uint8_t, etc

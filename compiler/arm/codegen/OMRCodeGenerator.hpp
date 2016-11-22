@@ -19,17 +19,6 @@
 #ifndef OMR_ARM_CODEGENERATOR_INCL
 #define OMR_ARM_CODEGENERATOR_INCL
 
-/*
- * The following #define and typedef must appear before any #includes in this file
- */
-#ifndef OMR_CODEGENERATOR_CONNECTOR
-#define OMR_CODEGENERATOR_CONNECTOR
-namespace OMR { namespace ARM { class CodeGenerator; } }
-namespace OMR { typedef OMR::ARM::CodeGenerator CodeGeneratorConnector; }
-#else
-#error OMR::ARM::CodeGenerator expected to be a primary connector, but a OMR connector is already defined
-#endif
-
 #include "compiler/codegen/OMRCodeGenerator.hpp"
 
 #include <stdint.h>

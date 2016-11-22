@@ -19,20 +19,6 @@
 #ifndef TEST_Z_CODEGENERATORBASE_INCL
 #define TEST_Z_CODEGENERATORBASE_INCL
 
-/*
- * The following #define and typedef must appear before any #includes in this file
- */
-#ifndef TEST_CODEGENERATORBASE_CONNECTOR
-#define TEST_CODEGENERATORBASE_CONNECTOR
-
-namespace TestCompiler { namespace Z { class CodeGenerator; } }
-namespace TestCompiler { typedef Z::CodeGenerator CodeGeneratorConnector; }
-
-#else
-#error TestCompiler::Z::CodeGenerator expected to be a primary connector, but a TestCompiler connector is already defined
-#endif
-
-
 #include "compilertest/codegen/TestCodeGenerator.hpp"
 #include "codegen/LinkageConventionsEnum.hpp"
 

@@ -26,12 +26,12 @@ namespace TR { class Compilation; }
 namespace TR
 {
 
-class OMR_EXTENSIBLE CodeGenerator : public OMR::CodeGeneratorConnector
+class OMR_EXTENSIBLE CodeGenerator : public OMRCON::CodeGenerator
    {
    public:
 
    CodeGenerator(TR::Compilation *comp) :
-      OMR::CodeGeneratorConnector() {}
+      OMRCON::CodeGenerator() {}
    };
 }
 

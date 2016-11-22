@@ -19,15 +19,6 @@
 #ifndef OMR_X86_CODEGENERATOR_INCL
 #define OMR_X86_CODEGENERATOR_INCL
 
-/*
- * The following #define and typedef must appear before any #includes in this file
- */
-#ifndef OMR_CODEGENERATOR_CONNECTOR
-#define OMR_CODEGENERATOR_CONNECTOR
-namespace OMR { namespace X86 { class CodeGenerator; } }
-namespace OMR { typedef OMR::X86::CodeGenerator CodeGeneratorConnector; }
-#endif
-
 #include "compiler/codegen/OMRCodeGenerator.hpp"
 
 #include "codegen/Machine.hpp"                 // for Machine, etc

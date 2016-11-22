@@ -171,4 +171,43 @@
 #define BITVECTOR_BIT_NUMBERING_MSB   1
 #define DUT_DIRECT_TRACE_REGISTRATION 1
 
+// TODO: find a new home
+// TODO: Move TestCompiler entries into the test compiler project
+#if HOST_ARCH == ARCH_X86
+namespace OMR { namespace X86 { using namespace OMR; } }
+
+namespace TestCompiler { namespace X86 { using namespace TestCompiler; } }
+
+#if TR_HOST_64BIT
+namespace OMR { namespace X86 { namespace AMD64 { using namespace OMR::X86; } } }
+namespace OMRCON = OMR::X86::AMD64;
+
+namespace TestCompiler { namespace X86 { namespace AMD64 { using namespace TestCompiler::X86; } } }
+namespace TestCompilerCON = OMR::X86::AMD64;
+#else
+namespace OMR { namespace X86 { namespace i386 { using namespace OMR::X86; } } }
+namespace OMRCON = OMR::X86::i386;
+
+namespace TestCompiler { namespace X86 { namespace i386 { using namespace TestCompiler::X86; } } }
+namespace TestCompilerCON = OMR::X86::i386;
+#endif
+#elif HOST_ARCH == ARCH_ZARCH
+namespace OMR { namespace Z { using namespace OMR; } }
+namespace OMRCON = OMR::Z;
+
+namespace TestCompiler { namespace Z { using namespace TestCompiler; } }
+namespace TestCompilerCON = TestCompiler::Z;
+#elif HOST_ARCH == ARCH_POWER
+namespace OMR { namespace Power { using namespace OMR; } }
+namespace OMRCON = OMR::Power;
+
+namespace TestCompiler { namespace Power { using namespace TestCompiler; } }
+namespace TestCompilerCON = TestCompiler::Power;
+#elif HOST_ARCH == ARCH_ARM
+namespace OMR { namespace ARM { using namespace OMR; } }
+namespace OMRCON = OMR::ARM;
+
+namespace TestCompiler { namespace ARM { using namespace TestCompiler; } }
+namespace TestCompilerCON = TestCompiler::ARM;
+#endif
 #endif /* OMR_DEFINES_H */

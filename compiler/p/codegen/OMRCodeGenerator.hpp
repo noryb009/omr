@@ -19,17 +19,6 @@
 #ifndef OMR_POWER_CODEGENERATORBASE_INCL
 #define OMR_POWER_CODEGENERATORBASE_INCL
 
-/*
- * The following #define and typedef must appear before any #includes in this file
- */
-#ifndef OMR_CODEGENERATOR_CONNECTOR
-#define OMR_CODEGENERATOR_CONNECTOR
-namespace OMR { namespace Power { class CodeGenerator; } }
-namespace OMR { typedef OMR::Power::CodeGenerator CodeGeneratorConnector; }
-#else
-#error OMR::Power::CodeGenerator expected to be a primary connector, but a OMR connector is already defined
-#endif
-
 #include "compiler/codegen/OMRCodeGenerator.hpp"
 
 #include "codegen/InstOpCode.hpp"              // for InstOpCode, etc

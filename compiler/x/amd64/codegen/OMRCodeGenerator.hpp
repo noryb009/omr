@@ -19,17 +19,6 @@
 #ifndef OMR_AMD64_CODEGENERATOR_INCL
 #define OMR_AMD64_CODEGENERATOR_INCL
 
-/*
- * The following #define and typedef must appear before any #includes in this file
- */
-#ifndef OMR_CODEGENERATOR_CONNECTOR
-#define OMR_CODEGENERATOR_CONNECTOR
-namespace OMR { namespace X86 { namespace AMD64 { class CodeGenerator; } } }
-namespace OMR { typedef OMR::X86::AMD64::CodeGenerator CodeGeneratorConnector; }
-#else
-#error OMR::X86::AMD64::CodeGenerator expected to be a primary connector, but a OMR connector is already defined
-#endif
-
 #include "compiler/x/codegen/OMRCodeGenerator.hpp"
 
 #include "codegen/RealRegister.hpp"       // for TR::RealRegister::NumRegisters
