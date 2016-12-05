@@ -52,6 +52,7 @@ JIT_PRODUCT_BACKEND_SOURCES+=\
     $(JIT_OMR_DIRTY_DIR)/env/Region.cpp \
     $(JIT_OMR_DIRTY_DIR)/env/StackMemoryRegion.cpp \
     $(JIT_OMR_DIRTY_DIR)/env/OMRPersistentInfo.cpp \
+    $(JIT_OMR_DIRTY_DIR)/env/Port.cpp \
     $(JIT_OMR_DIRTY_DIR)/env/TRMemory.cpp \
     $(JIT_OMR_DIRTY_DIR)/env/TRPersistentMemory.cpp \
     $(JIT_OMR_DIRTY_DIR)/env/VerboseLog.cpp \

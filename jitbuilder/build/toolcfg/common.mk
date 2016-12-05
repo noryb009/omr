@@ -31,8 +31,8 @@ PRODUCT_RELEASE?=tr.open.jitbuilder
 
 PRODUCT_NAME?=jitbuilder
 
-PRODUCT_LIBPATH=
-PRODUCT_SLINK=
+PRODUCT_LIBPATH=../../lib
+PRODUCT_SLINK=omrstatic
 
 #
 # Now we include the host and target tool config

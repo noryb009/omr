@@ -37,8 +37,8 @@ PRODUCT_RELEASE?=tr.open.test
 
 PRODUCT_NAME?=testjit
 
-PRODUCT_LIBPATH=
-PRODUCT_SLINK=
+PRODUCT_LIBPATH=../../lib
+PRODUCT_SLINK=omrstatic
 
 #
 # Now we include the host and target tool config

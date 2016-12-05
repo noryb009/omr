@@ -31,6 +31,7 @@
 #include "env/CPU.hpp"                         // for Cpu
 #include "env/jittypes.h"                      // for uintptrj_t, etc
 #include "env/PersistentInfo.hpp"              // for PersistentInfo
+#include "env/Port.hpp"
 
 #if defined(LINUX) || defined(OSX)
 #include <unistd.h>                 // for getpid, intptr_t, pid_t
@@ -183,20 +184,19 @@ TR_FrontEnd::getFormattedName(
       bool suffix)
    {
 
-#if defined(LINUX) || defined(OSX)
-   // FIXME: TODO: This is a temporary implementation -- we ignore the suffix format and
-   // use the pid only
 
    if(suffix)
       {
-      pid_t pid = getpid();
-      snprintf(buf, bufLength, "%s-%d", name, pid);
+      // FIXME: TODO: This is a temporary implementation -- we ignore the
+      // suffix format and use the pid only
+
+      OMRPORT_ACCESS_FROM_OMRPORT(TR::PortLibrary::getPortLibrary());
+      uintptr_t pid = omrsysinfo_get_pid();
+      snprintf(buf, bufLength, "%s-%ld", name, pid);
 
       // FIXME: proper error handling for snprintf
       return buf;
       }
-
-#endif
 
    return strncpy(buf, name, bufLength);
 
