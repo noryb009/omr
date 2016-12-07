@@ -56,6 +56,7 @@ testMain(int argc, char **argv, char **envp)
 
 	if (isChild) {
 		portTestEnv->initPort();
+
 		if (startsWith(testName, "omrfile")) {
 			return omrfile_runTests(portTestEnv->getPortLibrary(), argv[0], testName, FALSE);
 #if defined (WIN32) | defined (WIN64)
@@ -69,6 +70,7 @@ testMain(int argc, char **argv, char **envp)
 		}
 		portTestEnv->shutdownPort();
 	} else {
+
 		result = RUN_ALL_TESTS();
 	}
 

@@ -29,7 +29,7 @@ class PortLibrary
    static void init()
       {
       // TODO: move this to thread-only
-      intptr_t rc = omrthread_attach_ex(NULL, J9THREAD_ATTR_DEFAULT);
+      intptr_t rc = 0;//omrthread_attach_ex(NULL, J9THREAD_ATTR_DEFAULT);
       if (rc != 0) {
          return;
       }

@@ -185,7 +185,7 @@ TR_FrontEnd::getFormattedName(
    {
 
 
-   if(suffix)
+   if(true || suffix)
       {
       // FIXME: TODO: This is a temporary implementation -- we ignore the
       // suffix format and use the pid only
